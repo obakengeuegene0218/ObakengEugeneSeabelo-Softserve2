@@ -1,10 +1,14 @@
 
 import  {BrowserRouter,Routes,Route}  from 'react-router-dom';
+import { useState } from 'react';
 import NewCustomer from './NewCustomer';
 import List from './list';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+ 
+
   return (
     <div className="App">
       <header className="App-header">
@@ -26,5 +30,5 @@ path='/'>
   </div>
   );
 }
-
+  
 export default App;
