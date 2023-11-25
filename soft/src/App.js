@@ -1,10 +1,11 @@
 
 import  {BrowserRouter as Router, Route, Link, Switch}  from 'react-router-dom';
-import { useState } from 'react';
-import NewCustomer from './NewCustomer';
+import CustomerDetails from './CustomerDetails';
+import UpdateCustomer from './UpdateCustomer';
+import CreateCustomer from './CreateCustomer';
 import List from './list';
 import './App.css';
-import { useState } from 'react';
+
 
 function App() {
  

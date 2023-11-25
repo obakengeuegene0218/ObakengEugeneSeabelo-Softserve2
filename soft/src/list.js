@@ -1,20 +1,23 @@
-import ListItem from './ListItem'
-import { useState } from 'react'
+import React from 'react';
+import { Link} from 'react'
 
-export default function List(){
-    [setCustomer, setNewCustomer]=useState('customer')
-
-
-    fetch('./')
-    .then 
-
-return(
-< ListItem />
-)
+const List =() =>{
 
 
-   
 
+    return(
+        <div>
+            <h2>Customer List</h2>
+            <ul>
+                <li>
+                <Link to="/details/1">Customer 1</Link>
+                </li>
+                <li>
+                <Link to="/details/2">Customer 2</Link>
+                </li>
+            </ul>
 
+        </div>
+    )
 }
-
+ export default List;
