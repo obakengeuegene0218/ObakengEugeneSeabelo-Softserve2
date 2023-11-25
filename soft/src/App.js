@@ -1,5 +1,5 @@
 
-import  {BrowserRouter,Routes,Route}  from 'react-router-dom';
+import  {BrowserRouter as Router, Route, Link, Switch}  from 'react-router-dom';
 import { useState } from 'react';
 import NewCustomer from './NewCustomer';
 import List from './list';
@@ -10,24 +10,31 @@ function App() {
  
 
   return (
-    <div className="App">
-      <header className="App-header">
-        List 
-</header>
+<Router>
 
-<Routes
-path='/'>
-       <Route
-        path='./NewCustomer.js'   element={<NewCustomer />}>
-       </Route>
-   
+  <div>
+    <nav>
+      <ul>
+        <li>
+          <Link to ="/">Home</Link>
+        </li>
+        <li>
+         <link Link to ="/create">Create Customer</link>
+        </li>
+      </ul>
+    </nav>
+
+    <hr />
+<Switch>
+  <route path ="/create" components={CreateCustomer} />
+  <route path ="/details/:customerId" components={CustomerDetails} />
+  <route path ="/update/:customerId" components={UpdateCustomer} />
+  <route path ="/" components={List} />
+</Switch>
+
     
-       <Route
-        path='./list.js' element ={<List />}>
-       </Route>
-      
-  </Routes>
   </div>
+</Router>
   );
 }
   
