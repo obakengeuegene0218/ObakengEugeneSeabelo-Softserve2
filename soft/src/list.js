@@ -1,23 +1,31 @@
-import React from 'react';
-import { Link} from 'react'
+// CustomersList.js
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-const List =() =>{
+const CustomersList = () => {
+  const [customers, setCustomers] = useState([]);
 
+  useEffect(() => {
+    // Fetch customer data when the component mounts
+    axios.get('http://localhost:5000/api/customer')
+      .then(response => setCustomers(response.data))
+      .catch(error => console.error('Error fetching customers:', error));
+  }, []);
 
+  return (
+    <div>
+      <h2>Customer List</h2>
+      <ul>
+        {customers.map(customer => (
+          <li key={customer.customerID}>
+            <Link to={`/details/${customer.customerID}`}>{customer.firstName} {customer.lastName}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-    return(
-        <div>
-            <h2>Customer List</h2>
-            <ul>
-                <li>
-                <Link to="/details/1">Customer 1</Link>
-                </li>
-                <li>
-                <Link to="/details/2">Customer 2</Link>
-                </li>
-            </ul>
+export default CustomersList;
 
-        </div>
-    )
-}
- export default List;
