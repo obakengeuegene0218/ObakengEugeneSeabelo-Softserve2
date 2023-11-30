@@ -26,12 +26,11 @@ const CreateCustomer = () => {
     <div>
       <h2>Create Customer</h2>
       <form>
-        {/* Add input fields for customer details */}
+      
         <label>First Name:
           <input type="text" name="firstName" onChange={handleInputChange} />
         </label>
-        {/* Add other input fields for lastName, emailAddress, dateOfBirth, etc. */}
-        {/* ... */}
+      
         <button type="button" onClick={handleCreateCustomer}>Create Customer</button>
       </form>
     </div>

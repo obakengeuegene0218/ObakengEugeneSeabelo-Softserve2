@@ -24,7 +24,7 @@ const CustomerDetails = ({ match }) => {
       <p>Customer ID: {customer.customerID}</p>
       <p>Name: {customer.firstName} {customer.lastName}</p>
       <p>Email: {customer.emailAddress}</p>
-      {/* Add more details as needed */}
+      <p></p>
     </div>
   );
 };
